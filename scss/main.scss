@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*===== VARIABLES CSS =====*/
+:root{
+
+    /*========== Colors ==========*/
+    --first-color: #26A69A;
+    --first-color-lighter: #ECF3F2;
+    --title-color: #11443F;
+    --text-color: #5B7B78;
+    --body-color: #F5FFFE;
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== BASE ==========*/
+
+body{
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+    background-color: var(--body-color);
+    overflow: hidden;
+}
+
+h1,h2,ul,p{
+    margin: 0;  
+}
+
+ul{
+    padding: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.main_container{
+    transition: 0.5s ease;
+    position: relative;
+    width: 100vw;
+    min-height: 100vh;
+    background: url(/LandingPage/assets/bali.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+header{
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0px;
+
+    .logo{
+        text-transform: capitalize;
+        font-weight: var(--font-semi-bold);
+        color: var(--first-color-lighter);
+        font-size: 1.7em;
+    }
+
+    .menu{
+        display: flex;
+        column-gap: 1.5rem;
+        text-transform: capitalize;
+        z-index: 111;
+        
+
+        .links{
+            color: var(--first-color-lighter);
+            font-size: 1.1em;
+            font-weight: var(--font-medium);
+            letter-spacing: .5px;
+            transition: all 0.3s ease;
+            &:hover{
+                color: var(--first-color);
+            }
+        }
+    }
+
+    .hambtn{
+        display: none;
+    }
+    
+
+  
+}
+
+main{
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+      max-width: 1200px;
+      line-height: 1;
+    width: 100%;
+    z-index: 1;
+    margin: 0 auto;
+    padding: 1.5rem 0px;
+   
+
+    .first_ct{
+        text-transform: capitalize;
+        color: var(--first-color-lighter);
+        font-size:2.5em;
+    }
+
+    .main_ct{
+        font-size: 5em;
+        transition: 0.5s ease;
+        font-weight: var(--font-semi-bold);
+        text-transform: capitalize;
+        color: var(--first-color-lighter);
+        margin-top: 1.5rem;
+    }
+
+    .desc_ct{
+        transition: 0.5s ease;
+        max-width: 400px;
+        color: var(--first-color-lighter);
+        text-transform: capitalize;
+        line-height: 1.4;
+        margin-top: 1.5rem;
+        font-size: 1.1em;
+        margin-bottom: 1.5rem;
+    }
+
+    .explorebtn{
+        display: inline-block;
+        background: var(--body-color);
+        color: var(--first-color);
+        max-width: 150px;
+        display: flex;
+        text-transform: capitalize;
+        font-weight: var(--font-medium);
+        font-size: 1.1em;
+        justify-content: center;
+        align-items: center;
+        padding: 1.2em 2em;
+        border-radius: 5px;
+        transition: all 0.4s ease;
+
+        &:hover{
+            background: var(--first-color);
+            color: var(--body-color);
+        }
+    }
+}
+
+.bgchanger{
+   max-width: 200px;
+   background: var(--body-color);
+   position: fixed;
+   bottom: 2%;
+   right: 3%;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: .5em .3em;
+   border-radius: 5px;
+   cursor: pointer;
+   z-index: 222;
+
+   .show{
+       border-radius: 5px;
+       margin: 0px 6px;
+       padding: 1.4em 1.5em;
+       background: beige;
+       transition: all 0.2s ease;
+   }
+
+   .showcase1{
+       background: url(/LandingPage/assets/bali.jpg);
+       background-size: cover;
+   }
+
+     .showcase2{
+       background: url(/LandingPage/assets/mainbora.jpg);
+       background-size: cover;
+   }
+   
+    .showcase3{
+       background: url(/LandingPage/assets/palawan.jpg);
+       background-size: cover;
+   }
+
+}
+
+
+
+
+}
+
+
+
+
+@media(max-width:768px){
+   .main_container{
+       padding: 0rem 3rem;
+        header{
+            .menu{
+                position: fixed;
+                top: 0;
+                right: 0%;
+                width: 45%;
+                height: 100vh;
+                transform: translateX(100%);
+                column-gap: 0;
+                row-gap: 1.2rem;
+                justify-content: center;
+                transition: 0.4s ease;
+                align-items: center;
+                flex-direction: column;
+                background: var(--first-color);
+
+                .links{
+                    color: var(--body-color);
+                }
+            }
+
+
+            .hambtn{
+                display: block;
+                transform: scale(1.8);
+                z-index:444;
+            }
+        }
+   }
+}
+
+
+
+@media(max-width:480px){
+
+    .main_container{
+        padding: 0 1rem;
+       
+        main{
+
+           .first_ct{
+               font-size: 2em;
+           }
+
+           .main_ct{
+             font-size: 4em;
+           }
+        }
+    }
+}
